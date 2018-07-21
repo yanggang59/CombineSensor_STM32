@@ -24,7 +24,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
 #include "bsp_BaseTim.h" 
-
+#include "bsp_usart.h"
 
 extern volatile uint32_t servo_delay_time;
 
@@ -150,8 +150,7 @@ void SysTick_Handler(void)
 /*  file (startup_stm32f10x_xx.s).                                            */
 /******************************************************************************/
 
-
-
+/*基本定时器中断服务函数*/
 void  BASIC_TIM_IRQHandler (void)
 {
 	if ( TIM_GetITStatus( BASIC_TIM, TIM_IT_Update) != RESET ) 
@@ -163,6 +162,33 @@ void  BASIC_TIM_IRQHandler (void)
 	}		 	
 }
 
+
+
+
+uint16_t rx_buf[1024];
+uint16_t num = 0;
+
+// 串口中断服务函数
+// 把接收到的数据存在一个数组缓冲区里面，当接收到的的值等于0XFF时，把值返回
+void DEBUG_USART_IRQHandler(void)
+{	
+	if(USART_GetITStatus(DEBUG_USART,USART_IT_RXNE)!=RESET)
+	{	
+		rx_buf[num] = USART_ReceiveData(DEBUG_USART);
+		
+		// 当接收到的值等于0XFF时，把值发送回去
+		if( rx_buf[num] == 0xff )
+		{
+			//USART_SendData(DEBUG_USARTx,rx_buf[num]); 
+		}
+		
+		// 当值不等时候，则继续接收下一个
+    else
+    {
+			num ++;
+	  }  
+	}	 
+}
 
 /**
   * @brief  This function handles PPP interrupt request.

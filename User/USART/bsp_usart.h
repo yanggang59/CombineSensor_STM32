@@ -10,8 +10,8 @@
   */
 #define  DEBUG_USART                   	USART1
 #define  DEBUG_USART_CLK                RCC_APB2Periph_USART1
-#define  DEBUG_USART_APBxClkCmd        RCC_APB2PeriphClockCmd
-#define  DEBUG_USART_BAUDRATE          115200
+#define  DEBUG_USART_APBxClkCmd         RCC_APB2PeriphClockCmd
+#define  DEBUG_USART_BAUDRATE           115200
 
 // USART GPIO Òý½Åºê¶¨Òå
 #define  DEBUG_USART_GPIO_CLK           (RCC_APB2Periph_GPIOA)
@@ -22,7 +22,8 @@
 #define  DEBUG_USART_RX_GPIO_PORT       GPIOA
 #define  DEBUG_USART_RX_GPIO_PIN        GPIO_Pin_10
 
-
+#define  DEBUG_USART_IRQ                USART1_IRQn
+#define  DEBUG_USART_IRQHandler         USART1_IRQHandler
 
 
 void Debug_USART_Config(void);

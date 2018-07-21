@@ -730,10 +730,10 @@ I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x559784E0)
 I (..\User\GeneralTim\bsp_GeneralTim.h)(0x5B53096C)
 I (..\User\BaseTim\bsp_BaseTim.h)(0x5B534980)
 I (..\User\CAN\bsp_can.h)(0x5B531FD9)
-I (..\User\USART\bsp_usart.h)(0x5B531FA3)
+I (..\User\USART\bsp_usart.h)(0x5B534D87)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (..\User\ADC\bsp_adc.h)(0x57E62C77)
-F (..\User\stm32f10x_it.c)(0x5B53495B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\User -I ..\User\ADC -I ..\User\BaseTim -I ..\User\CAN -I ..\User\GeneralTim -I ..\User\USART-I.\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\objects\stm32f10x_it.o --omf_browse .\objects\stm32f10x_it.crf --depend .\objects\stm32f10x_it.d)
+F (..\User\stm32f10x_it.c)(0x5B534F3D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\User -I ..\User\ADC -I ..\User\BaseTim -I ..\User\CAN -I ..\User\GeneralTim -I ..\User\USART-I.\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\objects\stm32f10x_it.o --omf_browse .\objects\stm32f10x_it.crf --depend .\objects\stm32f10x_it.d)
 I (..\User\stm32f10x_it.h)(0x559784D6)
 I (..\Libraries\CMSIS\stm32f10x.h)(0x559784E0)
 I (..\Libraries\CMSIS\core_cm3.h)(0x559784E0)
@@ -764,6 +764,8 @@ I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x559784E0)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x559784E0)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x559784E0)
 I (..\User\BaseTim\bsp_BaseTim.h)(0x5B534980)
+I (..\User\USART\bsp_usart.h)(0x5B534D87)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 F (..\User\ADC\bsp_adc.c)(0x57E62C77)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\User -I ..\User\ADC -I ..\User\BaseTim -I ..\User\CAN -I ..\User\GeneralTim -I ..\User\USART-I.\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\objects\bsp_adc.o --omf_browse .\objects\bsp_adc.crf --depend .\objects\bsp_adc.d)
 I (..\User\ADC\bsp_adc.h)(0x57E62C77)
 I (..\Libraries\CMSIS\stm32f10x.h)(0x559784E0)
@@ -854,7 +856,7 @@ I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x559784E0)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x559784E0)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x559784E0)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x559784E0)
-I (..\User\USART\bsp_usart.h)(0x5B531FA3)
+I (..\User\USART\bsp_usart.h)(0x5B534D87)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 F (..\User\GeneralTim\bsp_GeneralTim.c)(0x5B530974)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\User -I ..\User\ADC -I ..\User\BaseTim -I ..\User\CAN -I ..\User\GeneralTim -I ..\User\USART-I.\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\objects\bsp_generaltim.o --omf_browse .\objects\bsp_generaltim.crf --depend .\objects\bsp_generaltim.d)
 I (..\User\GeneralTim\bsp_GeneralTim.h)(0x5B53096C)
@@ -886,8 +888,8 @@ I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x559784E0)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x559784E0)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x559784E0)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x559784E0)
-F (..\User\USART\bsp_usart.c)(0x5B5322E0)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\User -I ..\User\ADC -I ..\User\BaseTim -I ..\User\CAN -I ..\User\GeneralTim -I ..\User\USART-I.\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\objects\bsp_usart.o --omf_browse .\objects\bsp_usart.crf --depend .\objects\bsp_usart.d)
-I (..\User\USART\bsp_usart.h)(0x5B531FA3)
+F (..\User\USART\bsp_usart.c)(0x5B534DA2)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\User -I ..\User\ADC -I ..\User\BaseTim -I ..\User\CAN -I ..\User\GeneralTim -I ..\User\USART-I.\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\objects\bsp_usart.o --omf_browse .\objects\bsp_usart.crf --depend .\objects\bsp_usart.d)
+I (..\User\USART\bsp_usart.h)(0x5B534D87)
 I (..\Libraries\CMSIS\stm32f10x.h)(0x559784E0)
 I (..\Libraries\CMSIS\core_cm3.h)(0x559784E0)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
