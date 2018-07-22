@@ -177,9 +177,12 @@ void DEBUG_USART_IRQHandler(void)
 		rx_buf[num] = USART_ReceiveData(DEBUG_USART);
 		
 		// 当接收到的值等于0XFF时，把值发送回去
-		if( rx_buf[num] == 0xff )
+		if( num==3  && rx_buf[num]==0xFF)
 		{
-			//USART_SendData(DEBUG_USARTx,rx_buf[num]); 
+			//USART_SendData(DEBUG_USARTx,num);
+			USART_SendData(DEBUG_USART,rx_buf[num-2]); 
+			USART_SendData(DEBUG_USART,rx_buf[num-1]); 
+			num = 0;		
 		}
 		
 		// 当值不等时候，则继续接收下一个

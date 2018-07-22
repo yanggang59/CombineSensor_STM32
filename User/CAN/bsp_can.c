@@ -42,18 +42,18 @@ static void CAN_GPIO_Config(void)
  * 输出  : 无
  * 调用  ：内部调用
  */
-static void CAN_NVIC_Config(void)
-{
-   	NVIC_InitTypeDef NVIC_InitStructure;
-		/* Configure one bit for preemption priority */
-		NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
-	 	/*中断设置*/
-		NVIC_InitStructure.NVIC_IRQChannel = CAN_RX_IRQ;	        //CAN1 RX0中断
-    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;	//抢占优先级0
-    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;			  //子优先级为0
-    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-    NVIC_Init(&NVIC_InitStructure);
-}
+//static void CAN_NVIC_Config(void)
+//{
+//   	NVIC_InitTypeDef NVIC_InitStructure;
+//		/* Configure one bit for preemption priority */
+//		NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
+//	 	/*中断设置*/
+//		NVIC_InitStructure.NVIC_IRQChannel = CAN_RX_IRQ;	        //CAN1 RX0中断
+//    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;	//抢占优先级0
+//    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;			  //子优先级为0
+//    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+//    NVIC_Init(&NVIC_InitStructure);
+//}
 
 /*
  * 函数名：CAN_Mode_Config
@@ -100,26 +100,26 @@ static void CAN_Mode_Config(void)
  * 输出  : 无
  * 调用  ：内部调用
  */
-static void CAN_Filter_Config(void)
-{
-	CAN_FilterInitTypeDef  CAN_FilterInitStructure;
+//static void CAN_Filter_Config(void)
+//{
+//	CAN_FilterInitTypeDef  CAN_FilterInitStructure;
 
-	/*CAN筛选器初始化*/
-	CAN_FilterInitStructure.CAN_FilterNumber=0;						//筛选器组0
-	CAN_FilterInitStructure.CAN_FilterMode=CAN_FilterMode_IdMask;	//工作在掩码模式
-	CAN_FilterInitStructure.CAN_FilterScale=CAN_FilterScale_32bit;	//筛选器位宽为单个32位。
-	/* 使能筛选器，按照标志的内容进行比对筛选，扩展ID不是如下的就抛弃掉，是的话，会存入FIFO0。 */
+//	/*CAN筛选器初始化*/
+//	CAN_FilterInitStructure.CAN_FilterNumber=0;						//筛选器组0
+//	CAN_FilterInitStructure.CAN_FilterMode=CAN_FilterMode_IdMask;	//工作在掩码模式
+//	CAN_FilterInitStructure.CAN_FilterScale=CAN_FilterScale_32bit;	//筛选器位宽为单个32位。
+//	/* 使能筛选器，按照标志的内容进行比对筛选，扩展ID不是如下的就抛弃掉，是的话，会存入FIFO0。 */
 
-	CAN_FilterInitStructure.CAN_FilterIdHigh= ((((u32)0x1314<<3)|CAN_ID_EXT|CAN_RTR_DATA)&0xFFFF0000)>>16;		//要筛选的ID高位 
-	CAN_FilterInitStructure.CAN_FilterIdLow= (((u32)0x1314<<3)|CAN_ID_EXT|CAN_RTR_DATA)&0xFFFF; //要筛选的ID低位 
-	CAN_FilterInitStructure.CAN_FilterMaskIdHigh= 0xFFFF;			//筛选器高16位每位必须匹配
-	CAN_FilterInitStructure.CAN_FilterMaskIdLow= 0xFFFF;			//筛选器低16位每位必须匹配
-	CAN_FilterInitStructure.CAN_FilterFIFOAssignment=CAN_Filter_FIFO0 ;				//筛选器被关联到FIFO0
-	CAN_FilterInitStructure.CAN_FilterActivation=ENABLE;			//使能筛选器
-	CAN_FilterInit(&CAN_FilterInitStructure);
-	/*CAN通信中断使能*/
-	CAN_ITConfig(CANx, CAN_IT_FMP0, ENABLE);
-}
+//	CAN_FilterInitStructure.CAN_FilterIdHigh= ((((u32)0x1314<<3)|CAN_ID_EXT|CAN_RTR_DATA)&0xFFFF0000)>>16;		//要筛选的ID高位 
+//	CAN_FilterInitStructure.CAN_FilterIdLow= (((u32)0x1314<<3)|CAN_ID_EXT|CAN_RTR_DATA)&0xFFFF; //要筛选的ID低位 
+//	CAN_FilterInitStructure.CAN_FilterMaskIdHigh= 0xFFFF;			//筛选器高16位每位必须匹配
+//	CAN_FilterInitStructure.CAN_FilterMaskIdLow= 0xFFFF;			//筛选器低16位每位必须匹配
+//	CAN_FilterInitStructure.CAN_FilterFIFOAssignment=CAN_Filter_FIFO0 ;				//筛选器被关联到FIFO0
+//	CAN_FilterInitStructure.CAN_FilterActivation=ENABLE;			//使能筛选器
+//	CAN_FilterInit(&CAN_FilterInitStructure);
+//	/*CAN通信中断使能*/
+//	CAN_ITConfig(CANx, CAN_IT_FMP0, ENABLE);
+//}
 
 
 /*
@@ -152,7 +152,7 @@ void CAN_SetMsg(CanTxMsg *TxMessage)
 	uint8_t ubCounter = 0;
 
   //TxMessage.StdId=0x00;						 
-  TxMessage->ExtId=0x1314;					 //使用的扩展ID
+  TxMessage->ExtId=0x18FF1507;					 //使用的扩展ID
   TxMessage->IDE=CAN_ID_EXT;					 //扩展模式
   TxMessage->RTR=CAN_RTR_DATA;				 //发送的是数据
   TxMessage->DLC=8;							 //数据长度为8字节

@@ -65,7 +65,7 @@ void ServoMove(void)
 int main(void)
 {
 	/*ADC 初始化*/
-	ADCx_Init();
+	ADCx_Init();  //采集的是C1和GND之间的电压
 	
 	/*基本定时器初始化*/
 	BASIC_TIM_Init();
@@ -81,7 +81,7 @@ int main(void)
 	
 	
 	
-	printf("\r\n CAN 使用回环模式，不接收外部数据\r\n");
+	//printf("\r\n CAN 使用回环模式，不接收外部数据\r\n");
 	
 	
   while(1)
@@ -99,11 +99,11 @@ int main(void)
 				
 				CAN_Transmit(CANx, &TxMessage);		
 				
-				printf("\r\n已使用CAN发送数据包！\r\n"); 
-				
-				printf("\r\n发送的报文内容为：\r\n");
-				
-				printf("\r\n 扩展ID号ExtId：0x%x \r\n",TxMessage.ExtId);	
+//				printf("\r\n已使用CAN发送数据包！\r\n"); 
+//				
+//				printf("\r\n发送的报文内容为：\r\n");
+//				
+//				printf("\r\n 扩展ID号ExtId：0x%x \r\n",TxMessage.ExtId);	
 				
 				CAN_DEBUG_ARRAY(TxMessage.Data,8); 		
 
@@ -111,9 +111,9 @@ int main(void)
 
 			  ADC_ConvertedValueLocal =(float) ADC_ConvertedValue/4096*3.3; // 读取转换的AD值
 			
-			  printf("\r\n The current AD value = 0x%04X \r\n", ADC_ConvertedValue); 
-			
-		    printf("\r\n The 1current AD value = %f V \r\n",ADC_ConvertedValueLocal); 
+//			  printf("\r\n The current AD value = 0x%04X \r\n", ADC_ConvertedValue); 
+//			
+//		    printf("\r\n The 1current AD value = %f V \r\n",ADC_ConvertedValueLocal); 
 				
 			}
 			
